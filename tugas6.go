@@ -5,19 +5,35 @@ import (
 	"strconv"
 )
 
+func genap() {
+	var x, count int
+
+	fmt.Println("Bilangan Genap")
+	fmt.Scanln(&x)
+
+	for x%2 == 0 {
+		count++
+		fmt.Scanln(&x)
+	}
+	fmt.Println("Count:", count)
+}
+
 func login() {
 	fmt.Println("Login")
 
 	var username_input, password_input, username_temp, password_temp string
 	var loop int
+	var isSuccess bool
 
 	username_temp = "admin"
 	password_temp = "admin"
 	loop = 0
+	isSuccess = false
 
 	fmt.Scan(&username_input, &password_input)
-	for username_input != username_temp && password_input != password_temp {
+	for !isSuccess {
 		fmt.Scan(&username_input, &password_input)
+		isSuccess = username_input != username_temp || password_input != password_temp
 		loop++
 	}
 
@@ -111,6 +127,7 @@ func cangkir_kopi() {
 }
 
 func main() {
+	genap()
 	login()
 	digit()
 	dompet()
