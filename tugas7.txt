@@ -1,0 +1,101 @@
+waktu
+kamus
+	masukan, menit, detik, jam: int
+
+algoritma
+    output("Input Waktu: ")
+	input(masukan)
+	detik <-- masukan
+	while detik >= 60
+		detik <-- detik - 60
+		menit <-- menit + 1
+	end
+
+	while menit >= 60
+		jam <-- jam + 1
+		menit <-- menit - 60
+	end
+	
+	output(jam, "jam")
+	output(menit, "menit")
+	output(detik, "detik")
+
+endprogram
+
+
+voucher
+kamus
+	bil, d1, d2, d3, d4: int
+	diskon, cb: bool
+
+algoritma
+    output("Masukkan bilangan: ")
+	input(bil)
+	d1 <-- bil/1000 mod 10
+	d2 <-- bil/100 mod 10
+	d3 <-- bil/10 mod 10
+	d4 <-- bil/1 mod 10
+	output(d1, d2, d3, d4)
+	diskon <-- d3 mod 2 == 0
+	output(diskon)
+	cb <-- (d4!=0) && (d1+d3) mod d4 == 0
+	output(cb)
+
+endprogram
+
+
+jumlah_bilangan
+kamus
+	x, y, digit: int
+
+algoritma
+    output("Masukkan nilai x: ")
+	input(x)
+	while x != 0
+		digit <-- x mod 10
+		y <-- y + digit
+		x <-- x/10
+	end
+	output(y)
+
+endprogram
+
+
+konsekutif
+kamus
+	bil, d1, d2: int
+	konsekutif: bool
+
+algoritma
+    output("Masukkan bilangan: ")
+	input(bil)
+	konsekutif <-- true
+	while bil != 0 && konsekutif
+		d1 <-- bil/1 mod 10
+		d2 <-- bil/10 mod 10
+		konsekutif <-- d1-d2 == 1 || d2-d1 == 1
+		bil <-- bil/10
+	end
+	output(konsekutif)
+
+endprogram
+
+
+fibonacci
+kamus
+	N, f0, f1, i, f_selanjutnya: int
+
+algoritma
+	f0 <-- 0
+	f1 <-- 1
+	input(N)
+	output(f0, " ")
+	repeat
+		output(f1, " ")
+		f_selanjutnya <-- f0 + f1
+		f0 <-- f1
+		f1 <-- f_selanjutnya
+		i++
+	until i <= N
+
+endprogram
