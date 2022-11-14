@@ -126,6 +126,23 @@ func cangkir_kopi() {
 	fmt.Println(cangkir)
 }
 
+func bil_prima() {
+	var prima bool
+	var i, bil int
+
+	prima = true
+	i = 2
+	fmt.Scanln(&bil)
+	if bil <= 1 {
+		prima = false
+	}
+	for i <= bil-1 && prima {
+		prima = bil%i != 0
+		i++
+	}
+	fmt.Println(prima)
+}
+
 func main() {
 	genap()
 	login()
@@ -134,4 +151,5 @@ func main() {
 	cangkir_kopi()
 	konsekutif()
 	tangki_air()
+	bil_prima()
 }
